@@ -13,7 +13,7 @@ defmodule Mix.Tasks.Compile.Rust2ex do
           "--path",
           Path.dirname(where),
           "--root",
-          Path.join(["_build", to_string(Mix.env()), "native"]),
+          Path.join(["_build", to_string(Mix.env()), "priv"]),
           if(Mix.env() == :prod, do: "", else: "--debug")
         ])
 
