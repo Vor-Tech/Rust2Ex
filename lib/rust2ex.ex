@@ -13,7 +13,7 @@ defmodule Mix.Tasks.Compile.Rust2ex do
           "--path",
           Path.dirname(where),
           "--root",
-          :code.priv_dir(Mix.Project.config()[:app]),
+          :code.priv_dir(Mix.Project.config[:app]),
           if(Mix.env() == :prod, do: "", else: "--debug")
         ])
 
