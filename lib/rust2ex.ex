@@ -3,7 +3,6 @@ defmodule Mix.Tasks.Compile.Rust2ex do
   @moduledoc "Compiles Rust packages in `native`, installs to `_build`"
 
   defp compile_dep(where) do
-    IO.puts(where)
     {_, code} = System.cmd("cargo", ["build", "--manifest-path", where])
 
     case code do
@@ -13,7 +12,7 @@ defmodule Mix.Tasks.Compile.Rust2ex do
           "--path",
           Path.dirname(where),
           "--root",
-          to_string(:code.priv_dir(Mix.Project.config[:app])),
+          to_string(:code.priv_dir(Mix.Project.config[:app]())),
           if(Mix.env() == :prod, do: "", else: "--debug")
         ])
 
