@@ -1,3 +1,6 @@
+# Rust2ex (C) 2021-2022 Jonathan Kurtz and Roland Metivier
+# Please read `LICENSE` for information
+
 # The directory Mix will write compiled artifacts to.
 /_build/
 
@@ -25,3 +28,6 @@ rust2ex-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+# ElixirLS files
+.elixir_ls
